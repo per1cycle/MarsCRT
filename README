@@ -1,0 +1,23 @@
+# HOW TO TASTE MARS CRT?
+
+## PREREQUEST
+Install vs 2022 and enable c/c++ support
+
+## GET START
+
+- launch visual studio developer prompt terminal 
+- locate to the project
+
+for pure c
+```powershell
+cl /c /GS- MarsEntry.c MarsMalloc.c MarsIO.c
+lib MarsEntry.obj MarsMalloc.obj MarsIO.obj /OUT:MarsCRT.lib
+# run the test.c
+cl /c FinalTest.c
+link FinalTest.obj MarsCRT.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
+```
+
+TODO: for c++
+```powershell
+todo
+```
