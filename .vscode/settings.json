@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "windows.ai.machinelearning.h": "c",
+        "marscrt.h": "c",
+        "windows.h": "c",
+        "charconv": "c",
+        "cstdio": "c",
+        "xlocnum": "c"
+    }
+}

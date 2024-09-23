@@ -60,6 +60,14 @@ void MarsEntry()
         }
         Command ++;
     }
+
+    if(!MarsHeapInit())
+    {
+        exit(1);
+    }
+    
+    Result = main(Argc, Argv);
+    exit(Result);
 }
 
 void Exit(int ExitCode) 
