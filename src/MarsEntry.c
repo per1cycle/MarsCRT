@@ -23,7 +23,7 @@
 #include <Windows.h>
 #include "MarsCRT.h"
 
-extern int main();
+extern int main(int, char**);
 void Exit(int ExitCode);
 
 void MarsEntry()
@@ -66,7 +66,7 @@ void MarsEntry()
         Exit(1);
     }
     
-    Exit(main());
+    Exit(main(Argc, Argv));
 }
 
 void Exit(int ExitCode) 

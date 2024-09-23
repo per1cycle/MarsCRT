@@ -33,13 +33,12 @@
 // defination for io
 #define EOF     (-1)
 #define FILE    int
-#define stdin   ((FILE*)GetStdHandle(STD_IN_HANDLE))
-#define stdout  ((FILE*)GetStdHandle(STD_OUT_HANDLE))
-#define stderr  ((FILE*)GetStdHandle(STD_ERROR_HANDLE))
+#define stdin   (GetStdHandle(STD_IN_HANDLE))
+#define stdout  (GetStdHandle(STD_OUTPUT_HANDLE))
+#define stderr  (GetStdHandle(STD_ERROR_HANDLE))
 
 // MarsString.c
 char* itoa(int, char*);
-size_t strlen(char* );
 
 // MarsIO
 int fwrite(const void*, size_t, size_t, FILE* );

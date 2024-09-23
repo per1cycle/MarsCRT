@@ -71,9 +71,4 @@ char* itoa(int Number, char* Buffer)
     return Result;
 }
 
-size_t strlen(char* String)
-{
-    size_t Length = 0;
-    for(;String[Length] != '\0'; Length ++);
-    return Length;
-}
+

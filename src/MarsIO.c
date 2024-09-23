@@ -44,13 +44,20 @@ int fread()
 
 }
 
-int fwrite(const void* Buffer, size_t Size, size_t Count, FILE* Stream)
+int fwrite(const void* Buffer, size_t Size, size_t Count, HANDLE Stream)
 {
     size_t Write = 0;
-    if(!WriteFile((HANDLE)Stream, Buffer, Size * Count, &Write, NULL))
+    // just out put to stdout
+    
+    if(WriteConsole((HANDLE)Stream, Buffer, Size * Count, &Write, NULL))
     {
         return 0;
     }
+
+    // if(!WriteFile((HANDLE)Stream, Buffer, Size * Count, &Write, NULL))
+    // {
+    //     return 0;
+    // }
     return Write;
 }
 
