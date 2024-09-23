@@ -23,57 +23,16 @@
 #pragma once
 #include "MarsCRT.h"
 
-/**
- * convert decimal to char*
- */
-char* itoa(int Number, char* Buffer)
+
+int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
-    char Result[1024];
-    int i = Number;
-    int Count = 0;
-    bool Neg = false;
-    if (i < 0)
-    {
-        Neg = true;
-        i = -i;
-    }
-    do
-    {
-        int Temp = i % 10;
-        Result[Count] = '0' + Temp;
-        Buffer[Count] = '0' + Temp;
-        Count ++;
-        i /= 10;
-
-    } while (i);
-
-    if (Neg)
-    {
-        Result[Count] = '-';
-        Buffer[Count] = '-';
-        Count ++;
-    }
-
-    for (i = 0; i < Count / 2; i++)
-    {
-        char Temp;
-        Temp = Result[i];
-        Result[i] = Result[Count - i - 1];
-        Result[Count - i - 1] = Temp;
-
-        Buffer[i] = Result[i];
-        Buffer[Count - i - 1] = Result[Count - i - 1];
-    }
     
-    Result[Count] = '\0';
-    Buffer[Count] = '\0';
-    
-    return Result;
 }
 
-size_t strlen(char* String)
+int printf(const char* Format, ...)
 {
-    size_t Length = 0;
-    for(;String[Length] != '\0'; Length ++);
-    return Length;
+    va_list(ArgList);
+    va_start(ArgList, Format);
+
+    return vfprintf(stdout, Format, ArgList);
 }

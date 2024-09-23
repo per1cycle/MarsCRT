@@ -20,60 +20,37 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#pragma once
+// alter for stdio
 #include "MarsCRT.h"
+#include <Windows.h>
 
-/**
- * convert decimal to char*
- */
-char* itoa(int Number, char* Buffer)
+int MarsIOInit()
 {
-    char Result[1024];
-    int i = Number;
-    int Count = 0;
-    bool Neg = false;
-    if (i < 0)
-    {
-        Neg = true;
-        i = -i;
-    }
-    do
-    {
-        int Temp = i % 10;
-        Result[Count] = '0' + Temp;
-        Buffer[Count] = '0' + Temp;
-        Count ++;
-        i /= 10;
-
-    } while (i);
-
-    if (Neg)
-    {
-        Result[Count] = '-';
-        Buffer[Count] = '-';
-        Count ++;
-    }
-
-    for (i = 0; i < Count / 2; i++)
-    {
-        char Temp;
-        Temp = Result[i];
-        Result[i] = Result[Count - i - 1];
-        Result[Count - i - 1] = Temp;
-
-        Buffer[i] = Result[i];
-        Buffer[Count - i - 1] = Result[Count - i - 1];
-    }
-    
-    Result[Count] = '\0';
-    Buffer[Count] = '\0';
-    
-    return Result;
+    return 1;
 }
 
-size_t strlen(char* String)
+int fopen()
 {
-    size_t Length = 0;
-    for(;String[Length] != '\0'; Length ++);
-    return Length;
+
 }
+
+int fclose(FILE* File)
+{
+    CloseHandle((HANDLE)File);
+}
+
+int fread()
+{
+
+}
+
+int fwrite(const void* Buffer, size_t Size, size_t Count, FILE* Stream)
+{
+    if(WriteFile((HANDLE)Stream, Buffer, ))
+}
+
+int fputc(char ch)
+{
+
+}
+

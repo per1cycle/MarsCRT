@@ -21,59 +21,31 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #pragma once
-#include "MarsCRT.h"
+// common defination 
+#include <Windows.h>
 
-/**
- * convert decimal to char*
- */
-char* itoa(int Number, char* Buffer)
-{
-    char Result[1024];
-    int i = Number;
-    int Count = 0;
-    bool Neg = false;
-    if (i < 0)
-    {
-        Neg = true;
-        i = -i;
-    }
-    do
-    {
-        int Temp = i % 10;
-        Result[Count] = '0' + Temp;
-        Buffer[Count] = '0' + Temp;
-        Count ++;
-        i /= 10;
+#define size_t unsigned long
+#define NULL (void*)(0)
+#define true    1
+#define false   0
+#define bool    int
 
-    } while (i);
+// defination for io
+#define FILE    int
+#define stdin   (FILE*)(GetStdHandle(STD_INPUT_HANDLE))
+#define stdout  (FILE*)(GetStdHandle(STD_OUTPUT_HANDLE))
+#define stderr  (FILE*)(GetStdHandle(STD_ERROR_HANDLE))
 
-    if (Neg)
-    {
-        Result[Count] = '-';
-        Buffer[Count] = '-';
-        Count ++;
-    }
+// MarsString.c
+extern char* itoa(int, char*);
 
-    for (i = 0; i < Count / 2; i++)
-    {
-        char Temp;
-        Temp = Result[i];
-        Result[i] = Result[Count - i - 1];
-        Result[Count - i - 1] = Temp;
+// MarsIO
+extern int fwrite(void*, );
+extern int fputc(char);
 
-        Buffer[i] = Result[i];
-        Buffer[Count - i - 1] = Result[Count - i - 1];
-    }
-    
-    Result[Count] = '\0';
-    Buffer[Count] = '\0';
-    
-    return Result;
-}
+// MarsPrintf
+extern int vfprintf(FILE*, const char*, va_list);
+extern int printf(const char*, ...);
 
-size_t strlen(char* String)
-{
-    size_t Length = 0;
-    for(;String[Length] != '\0'; Length ++);
-    return Length;
-}
+// MarsMalloc
+extern int MarsHeapInit();
