@@ -23,7 +23,7 @@
 #pragma once
 #include "MarsCRT.h"
 
-int fputc(char Char, FILE* Stream)
+int fputc(int Char, FILE* Stream)
 {
     if(fwrite(&Char, 1, 1, Stream) != 1)
     {
@@ -35,7 +35,7 @@ int fputc(char Char, FILE* Stream)
 
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
-    fputc('1', Stream);
+    fputc(2, Stream);
     
 }
 

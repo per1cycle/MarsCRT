@@ -47,7 +47,7 @@ int fread()
 int fwrite(const void* Buffer, size_t Size, size_t Count, FILE* Stream)
 {
     size_t Write = 0;
-    if(WriteFile((HANDLE)Stream, Buffer, Size * Count, &Write, NULL) != 0)
+    if(!WriteFile((HANDLE)Stream, Buffer, Size * Count, &Write, NULL))
     {
         return 0;
     }

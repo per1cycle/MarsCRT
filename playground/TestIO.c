@@ -1,4 +1,5 @@
 #include <Windows.h>
+#include <stdio.h>
 
 #define EOF     (-1)
 #define FILE    int

@@ -5,6 +5,7 @@
         "windows.h": "c",
         "charconv": "c",
         "cstdio": "c",
-        "xlocnum": "c"
+        "xlocnum": "c",
+        "stdio.h": "c"
     }
 }

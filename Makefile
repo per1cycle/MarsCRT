@@ -5,7 +5,7 @@ lib:
 	lib MarsEntry.obj MarsIO.obj MarsMalloc.obj MarsPrintf.obj MarsString.obj /OUT:Mars.lib
 	del -Force *.obj
 test: compile lib
-	cl /c .\tests\FinalTest.c
+	cl /DEBUG /c .\tests\FinalTest.c
 	link .\FinalTest.obj .\Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 
 clean:

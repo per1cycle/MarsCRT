@@ -33,23 +33,25 @@
 // defination for io
 #define EOF     (-1)
 #define FILE    int
-#define stdin   (FILE*)(GetStdHandle(STD_INPUT_HANDLE))
-#define stdout  (FILE*)(GetStdHandle(STD_OUTPUT_HANDLE))
-#define stderr  (FILE*)(GetStdHandle(STD_ERROR_HANDLE))
+#define stdin   (0)
+#define stdout  (1)
+#define stderr  (2)
 
 // MarsString.c
-extern char* itoa(int, char*);
+char* itoa(int, char*);
+size_t strlen(char* );
 
 // MarsIO
-extern int fwrite(const void*, size_t, size_t, FILE* );
-extern int fputc(char, FILE*);
+int fwrite(const void*, size_t, size_t, FILE* );
+int fputc(int, FILE*);
 
 // MarsPrintf
-extern int vfprintf(FILE*, const char*, va_list);
-extern int printf(const char*, ...);
+int vfprintf(FILE*, const char*, va_list);
+int printf(const char*, ...);
 
 // MarsMalloc
-extern int MarsHeapInit();
+int MarsHeapInit();
+int MarsIOInit();
 
 // util definition
 #define UNUSED_PARAM(x) ((x))

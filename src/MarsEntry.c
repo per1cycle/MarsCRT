@@ -65,6 +65,10 @@ void MarsEntry()
     {
         Exit(1);
     }
+    if(!MarsIOInit())
+    {
+        Exit(1);
+    }
     
     Result = main(Argc, Argv);
     Exit(Result);
