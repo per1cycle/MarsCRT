@@ -23,10 +23,22 @@
 #pragma once
 #include "MarsCRT.h"
 
+int fputc(char Char, FILE* Stream)
+{
+    if(fwrite(&Char, 1, 1, Stream) != 1)
+    {
+        return EOF;
+    }
+    return 0;
+}
+
 
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
+    UNUSED_PARAM(Format);
+    UNUSED_PARAM(ArgList);
     
+    fputc('1', Stream);
 }
 
 int printf(const char* Format, ...)

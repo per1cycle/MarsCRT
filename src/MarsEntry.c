@@ -63,7 +63,7 @@ void MarsEntry()
 
     if(!MarsHeapInit())
     {
-        exit(1);
+        Exit(1);
     }
     
     Result = main(Argc, Argv);

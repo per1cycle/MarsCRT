@@ -31,6 +31,7 @@
 #define bool    int
 
 // defination for io
+#define EOF     (-1)
 #define FILE    int
 #define stdin   (FILE*)(GetStdHandle(STD_INPUT_HANDLE))
 #define stdout  (FILE*)(GetStdHandle(STD_OUTPUT_HANDLE))
@@ -40,8 +41,8 @@
 extern char* itoa(int, char*);
 
 // MarsIO
-extern int fwrite(void*, );
-extern int fputc(char);
+extern int fwrite(const void*, size_t, size_t, FILE* );
+extern int fputc(char, FILE*);
 
 // MarsPrintf
 extern int vfprintf(FILE*, const char*, va_list);
@@ -49,3 +50,6 @@ extern int printf(const char*, ...);
 
 // MarsMalloc
 extern int MarsHeapInit();
+
+// util definition
+#define UNUSED_PARAM(x) ((x))

@@ -46,11 +46,11 @@ int fread()
 
 int fwrite(const void* Buffer, size_t Size, size_t Count, FILE* Stream)
 {
-    if(WriteFile((HANDLE)Stream, Buffer, ))
-}
-
-int fputc(char ch)
-{
-
+    size_t Write;
+    if(WriteFile((HANDLE)Stream, Buffer, Size * Count, &Write, NULL) != 0)
+    {
+        return 0;
+    }
+    return Write;
 }
 

@@ -1,0 +1,12 @@
+compile:
+	cl /c /GS- .\src\MarsEntry.c .\src\MarsIO.c .\src\MarsMalloc.c .\src\MarsPrintf.c .\src\MarsString.c
+
+lib:
+	lib MarsEntry.obj MarsIO.obj MarsMalloc.obj MarsPrintf.obj MarsString.obj /OUT:Mars.lib
+
+test: compile lib
+	cl /c .\tests\FinalTest.c
+	link .\FinalTest.obj .\Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
+
+clean:
+	del -Force *.obj *.lib *.exe

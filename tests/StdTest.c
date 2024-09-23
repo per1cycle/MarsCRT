@@ -1,5 +1,5 @@
-// Final test v0.0.0
-#include "../src/MarsCRT.h"
+// standard lib test v0.0.0
+#include <stdio.h>
 
 int main(int argc, char** argv)
 {
