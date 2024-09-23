@@ -23,7 +23,7 @@
 #include <Windows.h>
 #include "MarsCRT.h"
 
-extern int main();
+extern int main(int, char**);
 void Exit(int ExitCode);
 
 static void Error(char *Message)
@@ -67,7 +67,7 @@ void MarsEntry()
     }
     
     Result = main(Argc, Argv);
-    exit(Result);
+    Exit(Result);
 }
 
 void Exit(int ExitCode) 
