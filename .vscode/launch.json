@@ -5,7 +5,7 @@
         "name": "(Windows) Launch",
         "type": "cppvsdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/playground/TestMalloc.exe",
+        "program": "${workspaceFolder}/playground/TestIO.exe",
         "args": ["hello", "world"],
         "stopAtEntry": false,
         "cwd": "${fileDirname}",
