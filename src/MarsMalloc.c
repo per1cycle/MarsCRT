@@ -76,7 +76,7 @@ void* malloc(size_t MemorySize)
     return NULL;
 }
 
-int HeapInit()
+int MarsHeapInit()
 {
     void *Base = NULL;
     HeapLinkList Header = NULL;
