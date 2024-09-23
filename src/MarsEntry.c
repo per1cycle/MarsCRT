@@ -28,45 +28,45 @@ void Exit(int ExitCode);
 
 void MarsEntry()
 {
-    int Result = 0;
-    // detect "\"" or "'" or " "
-    int Interpret = 0;
-    int Argc = 0;
-    char* Argv[8];
-    char *Command = GetCommandLineA();
+    // int Result = 0;
+    // // detect "\"" or "'" or " "
+    // int Interpret = 0;
+    // int Argc = 0;
+    // char* Argv[8];
+    // char* Command = "Hello world";
 
-    Argv[Argc ++] = Command[0];
+    // Argv[Argc ++] = Command[0];
 
-    while(Command != '\0') 
-    {
-        if(*Command = '\'' || *Command == '\"')
-        {
-            if(Interpret) Interpret = 0;
-            else Interpret = 1;
-        }
-        else if(*Command == ' ' && Interpret == 0)
-        {
-            if(*(Command + 1) != '\0')
-            {    
-                Argv[Argc] = Command + 1;
-                Argc ++;
-            }
-            *Command = "\0";
-        }
-        Command ++;
-    }
+    // while(Command != '\0') 
+    // {
+    //     if(*Command = '\'' || *Command == '\"')
+    //     {
+    //         if(Interpret) Interpret = 0;
+    //         else Interpret = 1;
+    //     }
+    //     else if(*Command == ' ' && Interpret == 0)
+    //     {
+    //         if(*(Command + 1) != '\0')
+    //         {    
+    //             Argv[Argc] = Command + 1;
+    //             Argc ++;
+    //         }
+    //         *Command = "\0";
+    //     }
+    //     Command ++;
+    // }
 
-    if(!MarsHeapInit())
-    {
-        Exit(1);
-    }
+    // if(!MarsHeapInit())
+    // {
+    //     Exit(1);
+    // }
     
     if(!MarsIOInit())
     {
         Exit(1);
     }
     
-    Exit(main(Argc, Argv));
+    Exit(main(0, 0));
 }
 
 void Exit(int ExitCode) 

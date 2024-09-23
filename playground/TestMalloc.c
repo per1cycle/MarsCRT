@@ -22,7 +22,7 @@ typedef struct HeapLinkListHeader
 
 HeapLinkList Memory = NULL;
 
-void free(void* Mem)
+void Mfree(void* Mem)
 {
     HeapLinkList Start = VIRT2PHY(Mem, -HEAP_BLOCK_SIZE);
     if(Start->Type != USED)
@@ -43,7 +43,7 @@ void free(void* Mem)
     }
 }
 
-void* malloc(size_t MemorySize)
+void* Mmalloc(size_t MemorySize)
 {
     void *Result;
     size_t Allocated = 0;
@@ -103,7 +103,7 @@ int HeapInit()
 int main(int argc, char const *argv[])
 {
     HeapInit();
-    void* mem = malloc(10);
+    void* mem = Mmalloc(10);
     if(mem != NULL)
     {
         int x = 1;
