@@ -4,6 +4,6 @@
 int main(int argc, char** argv)
 {
     int i = argc;
-    fwrite(&i, 1, 1, stdout);
+    fwrite(&i, 4, 1, stdout);
     return 0;
 }
