@@ -8,39 +8,39 @@
 
 int MarsFwrite(const void* Buffer, size_t Size, size_t Count, FILE* Stream)
 {
-    size_t Write;
-    if(WriteFile((HANDLE)Stream, Buffer, Size * Count, &Write, NULL) != 0)
+    size_t Write = 0;
+    if(!WriteFile((HANDLE)Stream, Buffer, Size * Count, &Write, 0))
     {
         return 0;
     }
     return Write;
 }
 
-int MarsFputc(char Char, FILE* Stream)
+int MarsFputc(int Char, FILE* Stream)
 {
-    if(fwrite(&Char, 1, 1, Stream) != 1)
+    if(MarsFwrite(&Char, 1, 1, Stream) != 1)
     {
         return EOF;
     }
     return 0;
 }
 
-int vfprintf(FILE* Stream, const char*Format, va_list ArgList)
+int MarsVfprintf(FILE* Stream, const char*Format, va_list ArgList)
 {
-    fputc('1', Stream);
-    
+    MarsFputc('1', Stream);
+    return 1;
 }
 
-int printf(const char* Format, ...)
+int MarsPrintf(const char* Format, ...)
 {
     va_list(ArgList);
     va_start(ArgList, Format);
 
-    return vfprintf(stdout, Format, ArgList);
+    return MarsVfprintf(stdout, Format, ArgList);
 }
 
 int main(int argc, char const *argv[])
 {
-    printf("Hello");
+    MarsPrintf("Hello");
     return 0;
 }
