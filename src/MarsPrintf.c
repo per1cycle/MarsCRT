@@ -36,8 +36,6 @@ int fputc(char Char, FILE* Stream)
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
     fputc('1', Stream);
-    UNUSED_PARAM(Format);
-    UNUSED_PARAM(ArgList);
     
 }
 
