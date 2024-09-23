@@ -23,13 +23,8 @@
 #include <Windows.h>
 #include "MarsCRT.h"
 
-extern int main(int, char**);
+extern int main();
 void Exit(int ExitCode);
-
-static void Error(char *Message)
-{
-    Exit(1);
-}
 
 void MarsEntry()
 {
@@ -65,13 +60,13 @@ void MarsEntry()
     {
         Exit(1);
     }
+    
     if(!MarsIOInit())
     {
         Exit(1);
     }
     
-    Result = main(Argc, Argv);
-    Exit(Result);
+    Exit(main());
 }
 
 void Exit(int ExitCode) 

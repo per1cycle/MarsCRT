@@ -33,9 +33,9 @@
 // defination for io
 #define EOF     (-1)
 #define FILE    int
-#define stdin   (0)
-#define stdout  (1)
-#define stderr  (2)
+#define stdin   ((FILE*)GetStdHandle(STD_IN_HANDLE))
+#define stdout  ((FILE*)GetStdHandle(STD_OUT_HANDLE))
+#define stderr  ((FILE*)GetStdHandle(STD_ERROR_HANDLE))
 
 // MarsString.c
 char* itoa(int, char*);
