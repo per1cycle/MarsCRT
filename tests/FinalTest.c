@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv)
 {
-    char c = 'c';
-    fwrite(&c, 1, 1, stdout);
+    int i = argc;
+    fwrite(&i, 1, 1, stdout);
     return 0;
 }

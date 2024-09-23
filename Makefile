@@ -13,7 +13,7 @@ test: compile lib
 	cl /DEBUG /c ./tests/FinalTest.c
 	link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 	echo "run test..."
-	FinalTest.exe
+	FinalTest.exe 1 2 3
 
 clean:
 	del -Force *.obj *.lib *.exe

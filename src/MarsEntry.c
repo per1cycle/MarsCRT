@@ -28,14 +28,14 @@ void Exit(int ExitCode);
 
 void MarsEntry()
 {
-    // int Result = 0;
-    // // detect "\"" or "'" or " "
-    // int Interpret = 0;
-    // int Argc = 0;
-    // char* Argv[8];
-    // char* Command = "Hello world";
+    int Result = 0;
+    // detect "\"" or "'" or " "
+    int Interpret = 0;
+    int Argc = 0;
+    char* Argv[8];
+    char* Command = GetCommandLineA();
 
-    // Argv[Argc ++] = Command[0];
+    Argv[Argc ++] = Command[0];
 
     // while(Command != '\0') 
     // {
@@ -66,7 +66,7 @@ void MarsEntry()
         Exit(1);
     }
     
-    Exit(main(0, 0));
+    Exit(main(Argc, Argv));
 }
 
 void Exit(int ExitCode) 
