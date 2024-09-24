@@ -3,5 +3,7 @@
 
 int main(int argc, char* argv[])
 {
+    char buffer[1024];
+    puts(itoa(argc, buffer));
     return 0;
 }
