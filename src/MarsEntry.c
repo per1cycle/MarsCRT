@@ -23,7 +23,7 @@
 #include <Windows.h>
 #include "MarsCRT.h"
 
-extern int main(int, char**);
+extern int main(int argc, char* argv[]);
 void Exit(int ExitCode);
 
 void MarsEntry()
@@ -32,11 +32,15 @@ void MarsEntry()
     // detect "\"" or "'" or " "
     int Interpret = 0;
     int Argc = 0;
-    char* Argv[64];
-    char* Command = GetCommandLineA();
+    char* Argv[64] = 
+    {
+        "Hello",
+        "world"
+    };
+    char* Command = (char*)GetCommandLineA();
 
-    Argv[Argc] = Command[0];
-    
+    Argv[Argc ++] = Command[0];
+
     // while(Command != '\0')
     // {
     //     if(*Command = '\'' || *Command == '\"')
@@ -61,12 +65,12 @@ void MarsEntry()
     //     Exit(1);
     // }
     
-    if(!MarsIOInit())
-    {
-        Exit(1);
-    }
+    // if(!MarsIOInit())
+    // {
+    //     Exit(1);
+    // }
     
-    Exit(main(Argc, Argv));
+    Exit(main(1, Argv));
 }
 
 void Exit(int ExitCode) 

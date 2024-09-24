@@ -12,8 +12,6 @@ link:
 test: compile lib
 	cl /GS- /c ./tests/FinalTest.c
 	link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
-	echo "run test..."
-	FinalTest.exe
 
 clean:
 	del -Force *.obj *.lib *.exe

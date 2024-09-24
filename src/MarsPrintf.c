@@ -61,7 +61,6 @@ int puts(char* String)
 
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
-    puts("[LOG]: Debug in vfprintf\n");
     puts(Format);
 }
 
