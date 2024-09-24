@@ -16,7 +16,7 @@ Install vs 2022 and enable c/c++ support
 
 for pure c
 ```powershell
-cl /c /GS- MarsEntry.c MarsMalloc.c MarsIO.c
+cl /GS- /c MarsEntry.c MarsMalloc.c MarsIO.c
 lib MarsEntry.obj MarsMalloc.obj MarsIO.obj /OUT:MarsCRT.lib
 # run the test.c
 cl /GS- /c FinalTest.c
