@@ -70,7 +70,7 @@ char* itoa(int Number, char* Buffer)
     return Result;
 }
 
-size_t strlen(char* Char)
+size_t strlen(char* Char, int Useless)
 {
     size_t Length = 0;
     for(;Char[Length]; Length ++);

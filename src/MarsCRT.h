@@ -38,11 +38,12 @@
 
 // MarsString.c
 char* itoa(int, char*);
-size_t strlen(char*);
+size_t strlen(char*, int);
 
 // MarsIO
 int fwrite(const void*, size_t, size_t, FILE* );
-int fputc(int, FILE*);
+int fputc(char, FILE*);
+int fputs(char*, FILE*);
 
 // MarsPrintf
 int vfprintf(FILE*, const char*, va_list);

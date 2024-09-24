@@ -6,7 +6,7 @@ int main(int argc, char** argv)
     char buffer[1024];
     // char i = '2';
     // fputc(i, stdout);
-
+    fputs("hello world", stdout);
     
     return 0;
 }

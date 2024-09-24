@@ -9,6 +9,12 @@
         "stdio.h": "c",
         "chrono": "c",
         "system_error": "c",
-        "xlocale": "c"
+        "xlocale": "c",
+        "cstring": "c",
+        "ostream": "c",
+        "xhash": "c",
+        "xlocbuf": "c",
+        "xstring": "c",
+        "stralign.h": "c"
     }
 }
