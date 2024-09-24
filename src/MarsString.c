@@ -77,10 +77,19 @@ size_t _strlen(char* Char)
     return Length;
 }
 
+/**
+ * if s1 > s2?
+ */
 int strcmp(char* S1, char* S2)
 {
     size_t Length1 = _strlen(S1);
     size_t Length2 = _strlen(S2);
-    int i, j;
-    for(i = 0, j = 0; ;);
+    size_t i, j;
+    size_t Iter = min(Length1, Length2);
+    for(i = 0, j = 0; i < Iter && j < Iter; i ++, j ++)
+    {
+        if(S1[i] != S2[i])
+            return S1[i] > S2[i];
+    }
+    return 0;
 }
