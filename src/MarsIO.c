@@ -21,8 +21,8 @@
 //  DEALINGS IN THE SOFTWARE.
 
 // alter for stdio
-#include "MarsCRT.h"
 #include <Windows.h>
+#include "MarsCRT.h"
 
 int MarsIOInit()
 {
