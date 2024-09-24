@@ -33,7 +33,7 @@ int fputc(char Char, FILE* Stream)
 
 int fputs(char* Char, FILE* Stream)
 {
-    size_t Length = strlen(Char);
+    size_t Length = _strlen(Char);
     if(fwrite(Char, 1, Length, stdout) != Length)
     {
         return EOF;

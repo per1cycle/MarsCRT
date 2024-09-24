@@ -38,7 +38,8 @@
 
 // MarsString.c
 char* itoa(int, char*);
-size_t strlen(char*, int);
+size_t _strlen(char*); // TODO: fix native strlen.
+int strcmp(char*, char*);
 
 // MarsIO
 int fwrite(const void*, size_t, size_t, FILE* );

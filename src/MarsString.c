@@ -70,9 +70,17 @@ char* itoa(int Number, char* Buffer)
     return Result;
 }
 
-size_t strlen(char* Char, int Useless)
+size_t _strlen(char* Char)
 {
     size_t Length = 0;
     for(;Char[Length]; Length ++);
     return Length;
+}
+
+int strcmp(char* S1, char* S2)
+{
+    size_t Length1 = _strlen(S1);
+    size_t Length2 = _strlen(S2);
+    int i, j;
+    for(i = 0, j = 0; ;);
 }
