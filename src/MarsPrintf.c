@@ -22,7 +22,7 @@
 
 #include "MarsCRT.h"
 
-int fputc(int Char, FILE* Stream)
+int fputc(char Char, FILE* Stream)
 {
     if(fwrite(&Char, 1, 1, Stream) != 1)
     {
@@ -31,6 +31,15 @@ int fputc(int Char, FILE* Stream)
     return 0;
 }
 
+int fputs(char* Char, FILE* Stream)
+{
+    size_t Length = strlen(Char);
+    if(fwrite(Char, 1, Length, stdout) != Length)
+    {
+        return EOF;
+    }
+    return 0;
+}
 
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {

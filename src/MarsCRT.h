@@ -38,6 +38,7 @@
 
 // MarsString.c
 char* itoa(int, char*);
+size_t strlen(char*);
 
 // MarsIO
 int fwrite(const void*, size_t, size_t, FILE* );

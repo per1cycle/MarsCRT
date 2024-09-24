@@ -20,8 +20,8 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#pragma once
 #include "MarsCRT.h"
-
 /**
  * convert decimal to char*
  */
@@ -70,4 +70,9 @@ char* itoa(int Number, char* Buffer)
     return Result;
 }
 
-
+size_t strlen(char* Char)
+{
+    size_t Length = 0;
+    for(;Char[Length]; Length ++);
+    return Length;
+}

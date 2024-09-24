@@ -36,7 +36,6 @@ void MarsEntry()
     char* Command = GetCommandLineA();
 
     Argv[Argc] = Command[0];
-    Argc ++;
     
     // while(Command != '\0')
     // {

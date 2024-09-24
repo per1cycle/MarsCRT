@@ -19,7 +19,7 @@ for pure c
 cl /c /GS- MarsEntry.c MarsMalloc.c MarsIO.c
 lib MarsEntry.obj MarsMalloc.obj MarsIO.obj /OUT:MarsCRT.lib
 # run the test.c
-cl /c FinalTest.c
+cl /GS- /c FinalTest.c
 link FinalTest.obj MarsCRT.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 ```
 
