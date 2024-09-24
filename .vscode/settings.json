@@ -6,6 +6,9 @@
         "charconv": "c",
         "cstdio": "c",
         "xlocnum": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "chrono": "c",
+        "system_error": "c",
+        "xlocale": "c"
     }
 }

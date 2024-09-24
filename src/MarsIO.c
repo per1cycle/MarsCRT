@@ -44,7 +44,7 @@ int fread()
 
 }
 
-int fwrite(const void* Buffer, size_t Size, size_t Count, HANDLE Stream)
+int fwrite(const void* Buffer, size_t Size, size_t Count, FILE* Stream)
 {
     size_t Write = 0;
     // just out put to stdout

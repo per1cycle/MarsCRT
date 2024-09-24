@@ -37,7 +37,8 @@ void MarsEntry()
 
     Argv[Argc] = Command[0];
     Argc ++;
-
+    int u = 11;
+    fwrite(&u, sizeof(int), 1, stdout);
     // while(Command != '\0')
     // {
     //     if(*Command = '\'' || *Command == '\"')

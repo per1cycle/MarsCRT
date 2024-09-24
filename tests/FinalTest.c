@@ -3,8 +3,8 @@
 
 int main(int argc, char** argv)
 {
-    char i = 'f';
-    fwrite(&i, 1, 1, stdout);
-    
+    char i = '2';
+    fputc(i, stdout);
+
     return 0;
 }
