@@ -32,14 +32,11 @@ void MarsEntry()
     // detect "\"" or "'" or " "
     int Interpret = 0;
     int Argc = 0;
-    char* Argv[64] = 
-    {
-        "Hello",
-        "world"
-    };
+    char* Argv[64];
     char* Command = (char*)GetCommandLineA();
-
-    Argv[Argc ++] = Command[0];
+    puts("[INFO] debug in entry\n");
+    fputs(Command, stdout);
+    Argv[Argc ++] = Command;
 
     // while(Command != '\0')
     // {
