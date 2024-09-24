@@ -14,7 +14,7 @@ Install vs 2022 and enable c/c++ support
 - launch visual studio developer command prompt terminal 
 - locate to the project
 
-for pure c
+runtime for pure c
 ```powershell
 cl /GS- /c MarsEntry.c MarsMalloc.c MarsIO.c
 lib MarsEntry.obj MarsMalloc.obj MarsIO.obj /OUT:MarsCRT.lib
@@ -23,7 +23,7 @@ cl /GS- /c FinalTest.c
 link FinalTest.obj MarsCRT.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 ```
 
-TODO: for c++
+TODO: runtime for c++
 ```powershell
 todo
 ```
