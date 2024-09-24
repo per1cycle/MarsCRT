@@ -45,6 +45,8 @@ int strcmp(char*, char*);
 int fwrite(const void*, size_t, size_t, FILE* );
 int fputc(char, FILE*);
 int fputs(char*, FILE*);
+int putc(char);
+int puts(char*);
 
 // MarsPrintf
 int vfprintf(FILE*, const char*, va_list);

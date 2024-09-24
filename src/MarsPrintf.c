@@ -31,10 +31,28 @@ int fputc(char Char, FILE* Stream)
     return 0;
 }
 
-int fputs(char* Char, FILE* Stream)
+int fputs(char* String, FILE* Stream)
 {
-    size_t Length = _strlen(Char);
-    if(fwrite(Char, 1, Length, stdout) != Length)
+    size_t Length = _strlen(String);
+    if(fwrite(String, 1, Length, stdout) != Length)
+    {
+        return EOF;
+    }
+    return 0;
+}
+
+int putc(char Char)
+{
+    if(fputc(Char, stdout) < 0)
+    {
+        return EOF;
+    }
+    return 0;
+}
+
+int puts(char* String)
+{
+    if(fputs(String, stdout) < 0)
     {
         return EOF;
     }
@@ -43,8 +61,8 @@ int fputs(char* Char, FILE* Stream)
 
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
-    fputc(2, Stream);
-    
+    puts("[LOG]: Debug in vfprintf\n");
+    puts(Format);
 }
 
 int printf(const char* Format, ...)
