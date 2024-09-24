@@ -34,40 +34,45 @@ void MarsEntry()
     int Argc = 0;
     char* Argv[64];
     char* Command = (char*)GetCommandLineA();
-    puts("[INFO] debug in entry\n");
-    fputs(Command, stdout);
-    Argv[Argc ++] = Command;
 
-    // while(Command != '\0')
-    // {
-    //     if(*Command = '\'' || *Command == '\"')
-    //     {
-    //         if(Interpret) Interpret = 0;
-    //         else Interpret = 1;
-    //     }
-    //     else if(*Command == ' ' && Interpret == 0)
-    //     {
-    //         if(*(Command + 1) != '\0')
-    //         {    
-    //             Argv[Argc] = Command + 1;
-    //             Argc ++;
-    //         }
-    //         *Command = "\0";
-    //     }
-    //     Command ++;
-    // }
+    Argv[0] = Command;
+    Argc ++;
+
+    while(*Command != '\0')
+    {
+        puts(Command);
+        if(*Command = '\'' || *Command == '\"')
+        {
+            if(Interpret)
+            {
+                Interpret = 0;
+            }
+            else Interpret = 1;
+        }
+        else if(*Command == ' ' && Interpret == 0)
+        {
+            if(*(Command + 1) != '\0')
+            {    
+                Argv[Argc] = Command + 1;
+                Argc ++;
+            }
+            *Command = "\0";
+        }
+        Command ++;
+        puts("\n");
+    }
 
     // if(!MarsHeapInit())
     // {
     //     Exit(1);
     // }
     
-    // if(!MarsIOInit())
-    // {
-    //     Exit(1);
-    // }
+    if(!MarsIOInit())
+    {
+        Exit(1);
+    }
     
-    Exit(main(1, Argv));
+    Exit(main(Argc, Argv));
 }
 
 void Exit(int ExitCode) 
