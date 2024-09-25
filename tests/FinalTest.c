@@ -4,6 +4,7 @@
 int main(int argc, char* argv[])
 {
     char buffer[1024];
-    puts(itoa(argc, buffer));
+    int* a = malloc(sizeof(int) * 4);
+    // puts(itoa(a, buffer));
     return 0;
 }

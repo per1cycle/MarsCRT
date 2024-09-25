@@ -58,3 +58,10 @@ int MarsIOInit();
 
 // util definition
 #define UNUSED_PARAM(x) ((x))
+
+// global definition
+#define B           (* 1)
+#define KB          (*1024 B)
+#define MB          (*1024 KB)
+#define HEAP_SIZE   (16 MB)
+
