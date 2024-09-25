@@ -40,7 +40,8 @@ void MarsEntry()
 
     while(*Command != '\0')
     {
-        if(*Command = '\'' || *Command == '\"')
+        
+        if(*Command == '\"')
         {
             if(Interpret)
             {
@@ -50,28 +51,20 @@ void MarsEntry()
         }
         else if((*Command) == ' ' && Interpret == 0)
         {
-            puts("Argc ++\n");
             if(*(Command + 1))
             {
                 Argv[Argc] = Command + 1;
                 Argc ++;
             }
-            *Command = "\0";
+            *Command = 0;
         }
         Command ++;
     }
 
-    puts("[INFO] debug in entry\n");
-    for(int i = 0; i < Argc; i ++)
+    if(MarsHeapInit())
     {
-        puts(Argv[i]);
-        puts("\n");
+        Exit(1);
     }
-    
-    // if(!MarsHeapInit())
-    // {
-    //     Exit(1);
-    // }
     
     if(!MarsIOInit())
     {
