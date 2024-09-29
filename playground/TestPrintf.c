@@ -2,10 +2,14 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-
+/**
+ * 
+ * MarsVfprintf support 
+ */
 int MarsVfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
     int Flag = 0;
+    char Buffer[1024];
 
     for(;*Format;)
     {
@@ -18,12 +22,23 @@ int MarsVfprintf(FILE* Stream, const char* Format, va_list ArgList)
 
         else 
         {
-            break;
             Format ++;
         }
         
         // TODO: add padding support.
-
+        
+        // output:
+        switch (*Format)
+        {
+        case 'd':
+            *Format ++;
+            int Value = va_arg(ArgList, int);
+            puts(itoa(Value, Buffer, 10));
+            break;
+        
+        default:
+            break;
+        }
     }
 }
 
@@ -38,6 +53,6 @@ int MarsPrintf(const char* Format, ...)
 
 int main(int argc, char const *argv[])
 {
-    MarsPrintf("hello world\n");
+    MarsPrintf("hello %d world\n", 'c');
     return 0;
 }

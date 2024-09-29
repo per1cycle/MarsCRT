@@ -19,6 +19,12 @@ TestString: compile lib
 	cl /GS- /c ./tests/TestString.c
 	link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 
+TestPrintf: Compile MakeLib
+	cl /GS- /c ./tests/TestPrintf.c
+	link ./TestPrintf.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
+	echo "run test..."
+	TestPrintf.exe 
+
 
 Clean:
 	del -Force *.obj *.lib *.exe

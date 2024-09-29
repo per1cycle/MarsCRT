@@ -61,20 +61,44 @@ int puts(char* String)
 
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
-    char *Result = Format;
-    size_t Count = 0;
+    int Flag = 0;
+    char Buffer[1024];
 
-    for(;;)
+    for(;*Format;)
     {
-        if(!*Result) break;
+        if( *Format != '%')
+        {
+            putc(*Format, Stream);
+            Format ++;
+            continue;
+        }
+
+        else 
+        {
+            Format ++;
+        }
         
+        // TODO: add padding support.
+        
+        // evaluate width
+        switch (*Format)
+        {
+        case 'd':
+            *Format ++;
+            int Value = va_arg(ArgList, int);
+            puts(itoa(Value, Buffer, 10));
+            break;
+        
+        default:
+            break;
+        }
     }
 
 }
 
 int printf(const char* Format, ...)
 {
-    va_list(ArgList);
+    va_list ArgList;
     va_start(ArgList, Format);
 
     return vfprintf(stdout, Format, ArgList);
