@@ -61,7 +61,15 @@ int puts(char* String)
 
 int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
 {
-    puts(Format);
+    char *Result = Format;
+    size_t Count = 0;
+
+    for(;;)
+    {
+        if(!*Result) break;
+        
+    }
+
 }
 
 int printf(const char* Format, ...)

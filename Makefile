@@ -9,7 +9,7 @@ Link:
 	cl /GS- /c ./tests/FinalTest.c
 	link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 
-FinalTest: compile lib
+FinalTest: Compile MakeLib
 	cl /GS- /c ./tests/FinalTest.c
 	link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 	echo "run test..."

@@ -20,7 +20,7 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-// common defination 
+// Common defination 
 #include <Windows.h>
 
 #define size_t unsigned long
@@ -29,12 +29,15 @@
 #define false   0
 #define bool    int
 
-// defination for io
+// Defination for io
 #define EOF     (-1)
 #define FILE    int
 #define stdin   ((FILE*)GetStdHandle(STD_IN_HANDLE))
 #define stdout  ((FILE*)GetStdHandle(STD_OUTPUT_HANDLE))
 #define stderr  ((FILE*)GetStdHandle(STD_ERROR_HANDLE))
+
+// Config defination.
+#define __MARS
 
 // MarsString.c
 char* itoa(int, char*);
