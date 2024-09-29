@@ -16,14 +16,16 @@ Install vs 2022 and enable c/c++ support
 
 runtime for pure c
 ```powershell
-cl /GS- /c MarsEntry.c MarsMalloc.c MarsIO.c
-lib MarsEntry.obj MarsMalloc.obj MarsIO.obj /OUT:MarsCRT.lib
+cl /GS- /c ./src/MarsEntry.c ./src/MarsIO.c ./src/MarsMalloc.c ./src/MarsPrintf.c ./src/MarsString.c
+lib MarsEntry.obj MarsIO.obj MarsMalloc.obj MarsPrintf.obj MarsString.obj /OUT:Mars.lib
+
 # run the test.c
-cl /GS- /c FinalTest.c
-link FinalTest.obj MarsCRT.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
+cl /GS- /c ./tests/FinalTest.c
+link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
+
 ```
 
 TODO: runtime for c++
 ```powershell
-todo
+TODO
 ```
