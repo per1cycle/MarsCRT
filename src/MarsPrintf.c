@@ -85,10 +85,19 @@ int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
         {
         case 'd':
             *Format ++;
-            int Value = va_arg(ArgList, int);
-            puts(itoa(Value, Buffer, 10));
+            int iValue = va_arg(ArgList, int);
+            puts(itoa(iValue, Buffer, 10));
             break;
-        
+        case 'c':
+            *Format ++;
+            char cValue = va_arg(ArgList, char);
+            putc(cValue);
+            break;
+        case 's':
+            *Format ++;
+            char* sValue = va_arg(ArgList, const char*);
+            puts(sValue);
+            break;
         default:
             break;
         }
