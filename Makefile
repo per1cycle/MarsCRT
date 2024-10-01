@@ -24,7 +24,7 @@ TestPrintf: Compile MakeLib
 	link ./TestPrintf.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 	echo "run test..."
 	TestPrintf.exe 
-
+	dir
 
 Clean:
 	del -Force *.obj *.lib *.exe

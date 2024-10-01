@@ -40,6 +40,7 @@
 #define __MARS
 
 // MarsString.c
+#define string (char*)
 char* itoa(int, char*);
 size_t _strlen(char*); // TODO: fix native strlen.
 int strcmp(char*, char*);
