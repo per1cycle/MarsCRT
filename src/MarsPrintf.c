@@ -113,6 +113,7 @@ int printf(const char* Format, ...)
     return vfprintf(stdout, Format, ArgList);
 }
 
+#ifdef DEBUG_PRINTF
 int log(const char* Format, ...)
 {
     printf("[INFO]: ");
@@ -121,3 +122,5 @@ int log(const char* Format, ...)
     vfprintf(stdout, Format, ArgList);
     printf("\n");
 }
+
+#endif

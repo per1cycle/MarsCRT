@@ -21,6 +21,14 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #define DEBUG
+
+#ifdef DEBUG
+#define DEBUG_PRINTF
+#define DEBUG_STRING
+#define DEBUG_IO
+#define DEBUG_MATH
+#endif
+
 // Common defination 
 #include <Windows.h>
 #define size_t unsigned long
