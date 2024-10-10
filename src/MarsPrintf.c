@@ -112,3 +112,12 @@ int printf(const char* Format, ...)
 
     return vfprintf(stdout, Format, ArgList);
 }
+
+int log(const char* Format, ...)
+{
+    printf("[INFO]: ");
+    va_list ArgList;
+    va_start(ArgList, Format);
+    vfprintf(stdout, Format, ArgList);
+    printf("\n");
+}
