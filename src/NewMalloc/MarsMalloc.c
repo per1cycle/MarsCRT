@@ -20,6 +20,16 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include "MarsCRT.h"
+#include "../MarsCRT.h"
 
+#define MAX_SIZE (16 MB)
 
+void free(void* AllocatedMem)
+{
+
+}
+
+void* malloc(size_t AllocSize)
+{
+    
+}

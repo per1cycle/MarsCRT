@@ -68,7 +68,7 @@ int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
     {
         if( *Format != '%')
         {
-            putc(*Format, Stream);
+            putc(*Format);
             Format ++;
             continue;
         }
@@ -86,7 +86,7 @@ int vfprintf(FILE* Stream, const char* Format, va_list ArgList)
         case 'd':
             *Format ++;
             int iValue = va_arg(ArgList, int);
-            puts(itoa(iValue, Buffer, 10));
+            puts(itoa(iValue, Buffer));
             break;
         case 'c':
             *Format ++;

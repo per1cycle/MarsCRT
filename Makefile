@@ -1,9 +1,8 @@
 Compile:
-	cl /GS- /c ./src/MarsEntry.c ./src/MarsIO.c ./src/MarsMalloc.c ./src/MarsPrintf.c ./src/MarsString.c
+	cl /c /GS- ./src/MarsEntry.c ./src/MarsIO.c ./src/NewMalloc/MarsMalloc.c ./src/MarsPrintf.c ./src/MarsString.c
 
 MakeLib:
 	lib MarsEntry.obj MarsIO.obj MarsMalloc.obj MarsPrintf.obj MarsString.obj /OUT:Mars.lib
-	del -Force *.obj
 
 Link:
 	cl /GS- /c ./tests/FinalTest.c
