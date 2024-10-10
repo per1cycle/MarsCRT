@@ -24,12 +24,31 @@
 
 #define MAX_SIZE (16 MB)
 
+/**
+ * In this version of mars malloc, we use win32 heap operation.
+ * Next generation of Malloc, i will consider replace to musl/mimalloc/llvm malloc.
+ */
+static HANDLE HEAP;
+
+void HeapInit()
+{
+    HEAP = HeapCreate(HEAP_NO_SERIALIZE, (16 * MB), (32 * MB));
+    if(HEAP == NULL)
+    {
+        ExitProcess(1);
+    }
+}
+
 void free(void* AllocatedMem)
 {
-
+    size_t Result = HeapFree(HEAP, HEAP_NO_SERIALIZE, AllocatedMem);
+    if(Result == 0)
+    {
+        ExitProcess(1);
+    }
 }
 
 void* malloc(size_t AllocSize)
 {
-    
+    return HeapAlloc(HEAP, HEAP_ZERO_MEMORY, AllocSize);
 }

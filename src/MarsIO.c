@@ -31,7 +31,7 @@ int MarsIOInit()
 
 int fopen()
 {
-
+    return 1;
 }
 
 int fclose(FILE* File)
@@ -41,7 +41,7 @@ int fclose(FILE* File)
 
 int fread()
 {
-
+    return 1;
 }
 
 int fwrite(const void* Buffer, size_t Size, size_t Count, FILE* Stream)

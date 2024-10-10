@@ -57,7 +57,7 @@ int vfprintf(FILE*, const char*, va_list);
 int printf(const char*, ...);
 
 // MarsMalloc
-int MarsHeapInit();
+// int MarsHeapInit();
 int MarsIOInit();
 
 // util definition

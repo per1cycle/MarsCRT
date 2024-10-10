@@ -1,7 +1,7 @@
 Compile:
-	cl /c /GS- ./src/MarsEntry.c ./src/MarsIO.c ./src/NewMalloc/MarsMalloc.c ./src/MarsPrintf.c ./src/MarsString.c
+	cl /c /GS- ./src/MarsEntry.c ./src/MarsIO.c ./src/MallocV1/MarsMalloc.c ./src/MarsPrintf.c ./src/MarsString.c
 
-MakeLib:
+Lib:
 	lib MarsEntry.obj MarsIO.obj MarsMalloc.obj MarsPrintf.obj MarsString.obj /OUT:Mars.lib
 
 Link:
@@ -14,11 +14,11 @@ FinalTest: Compile MakeLib
 	echo "run test..."
 	FinalTest.exe 1 2 3
 
-TestString: compile lib
+TestString: 
 	cl /GS- /c ./tests/TestString.c
 	link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 
-TestPrintf: Compile MakeLib
+TestPrintf: 
 	cl /GS- /c ./tests/TestPrintf.c
 	link ./TestPrintf.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 	echo "run test..."
