@@ -4,7 +4,7 @@ compile:
 debug:
 	cl /DDEBUG /c /GS- ./src/MarsEntry.c ./src/MarsIO.c ./src/MallocV1/MarsMalloc.c ./src/MarsPrintf.c ./src/MarsString.c
 
-lib:
+lib: compile
 	lib MarsEntry.obj MarsIO.obj MarsMalloc.obj MarsPrintf.obj MarsString.obj /OUT:Mars.lib
 
 link:
