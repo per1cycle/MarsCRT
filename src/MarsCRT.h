@@ -20,8 +20,6 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#define DEBUG
-
 #ifdef DEBUG
 #define DEBUG_PRINTF
 #define DEBUG_STRING
@@ -64,7 +62,7 @@ int puts(char*);
 // MarsPrintf
 int vfprintf(FILE*, const char*, va_list);
 int printf(const char*, ...);
-#ifdef DEBUG
+#ifdef DEBUG_PRINTF
 int log(const char*, ...);
 #endif
 
