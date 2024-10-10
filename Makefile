@@ -18,12 +18,17 @@ TestString:
 	cl /GS- /c ./tests/TestString.c
 	link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 
-TestPrintf: 
+TestPrintf: Compile Lib
 	cl /GS- /c ./tests/TestPrintf.c
 	link ./TestPrintf.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 	echo "run test..."
 	TestPrintf.exe 
-	dir
+
+TestMemory: Compile Lib
+	cl /GS- /c ./tests/TestMemory.c
+	link ./TestMemory.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
+	echo "run test..."
+	TestMemory.exe 
 
 Clean:
-	del -Force *.obj *.lib *.exe
+	rm -rf *.obj *.lib *.exe

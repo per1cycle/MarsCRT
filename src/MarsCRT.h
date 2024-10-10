@@ -20,9 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#define DEBUG
 // Common defination 
 #include <Windows.h>
-
 #define size_t unsigned long
 #define NULL (void*)(0)
 #define true    1
@@ -46,6 +46,7 @@ size_t _strlen(char*); // TODO: fix native strlen.
 int strcmp(char*, char*);
 
 // MarsIO
+int MarsIOInit();
 int fwrite(const void*, size_t, size_t, FILE* );
 int fputc(char, FILE*);
 int fputs(char*, FILE*);
@@ -55,10 +56,12 @@ int puts(char*);
 // MarsPrintf
 int vfprintf(FILE*, const char*, va_list);
 int printf(const char*, ...);
+#ifdef DEBUG
+int log(const char*, ...);
+#endif
 
 // MarsMalloc
-// int MarsHeapInit();
-int MarsIOInit();
+void HeapInit();
 
 // util definition
 #define UNUSED_PARAM(x) ((x))

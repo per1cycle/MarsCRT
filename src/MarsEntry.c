@@ -60,7 +60,7 @@ void MarsEntry()
         }
         Command ++;
     }
-
+    HeapInit();
     if(!MarsIOInit())
     {
         Exit(1);
