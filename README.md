@@ -26,6 +26,7 @@ link ./FinalTest.obj ./Mars.lib kernel32.lib /NODEFAULTLIB /entry:MarsEntry
 # if make is installed on your window:
 # choco install make
 make FinalTest
+
 ```
 
 TODO: runtime for c++
