@@ -52,3 +52,8 @@ void* malloc(size_t AllocSize)
 {
     return HeapAlloc(HEAP, HEAP_ZERO_MEMORY, AllocSize);
 }
+
+void realloc(void* Memory, size_t Length)
+{
+    return HeapReAlloc(HEAP, HEAP_ZERO_MEMORY, Memory, Length);
+}

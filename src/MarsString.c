@@ -93,3 +93,24 @@ int strcmp(char* S1, char* S2)
     }
     return 0;
 }
+
+
+void memcpy(void* DstMemory, void* SrcMemory)
+{
+    
+}
+
+void memmove()
+{
+
+}
+
+void memset()
+{
+
+}
+
+void memcmp()
+{
+
+}

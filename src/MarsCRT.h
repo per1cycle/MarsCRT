@@ -62,9 +62,10 @@ int puts(char*);
 // MarsPrintf
 int vfprintf(FILE*, const char*, va_list);
 int printf(const char*, ...);
-#ifdef DEBUG_PRINTF
-int log(const char*, ...);
-#endif
+
+// #ifdef DEBUG_PRINTF
+// int log(const char*, ...);
+// #endif
 
 // MarsMalloc
 void HeapInit();
